@@ -42,7 +42,6 @@ app.get("/cats", async (req, res) => {
   const cats = await Cat.find();
   console.log(msg);
   res.render('cats/index.ejs', {cats, msg}); // send the cats to be displayed 
-  // res.send("Welcome to the index page!");// to check this is working or not
 });
 
 
@@ -83,8 +82,6 @@ app.get("/", async (req, res) => {
 app.delete("/cats/:catId", async (req, res) => {
     const catId= req.params.catId;
     await Cat.findByIdAndDelete(catId);
-    // res.redirect("/fruits", {fruits}); // redirect to fruits page 
-//  res.redirect(`/fruits?msg="deleted ${fruit.name}"` ); // redirect to fruits page with a message 
   res.redirect('/cats?msg="record deleted"');
 
 });
