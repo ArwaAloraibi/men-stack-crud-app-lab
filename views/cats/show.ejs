@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= cat.name %></title> <!-- Dynamic title based on fruit name -->
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+
+    <div class="cat-details">
+
+
+    <a href="/cats/">Back to cats</a>
+
+    <h1><%= cat.name %></h1> <!-- Display fruit name -->
+
+    <!-- Conditional rendering based on fruit's readiness -->
+  <p>
+  <% if (cat.isReadyToAdopt) { %>
+    🐾 Ready to adopt!
+  <% } else { %>
+   Not ready yet
+  <% } %>
+</p>
+
+  <!-- delete button -->
+    <div class="cat-actions">
+
+<form action="/cats/<%=cat._id%>?_method=DELETE" method="POST">
+  <button type="submit">Delete <%= cat.name %></button>
+  </div>
+
+
+  </body>
+</html>

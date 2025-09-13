@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Cats</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+<body>    
+
+     <h1>All Cats</h1>
+     <a class="add-cat" href="/cats/new">Add Cat</a>
+
+     <ul>
+     <% cats.forEach((cat)=> { %>
+     <li>
+       <a class="cat-cards" href="/cats/<%=cat._id%>">
+         <%= cat.name %>
+       </a>
+     </li>
+     <% }) %>
+   </ul>
+   
+ </body>
+
+</html>
